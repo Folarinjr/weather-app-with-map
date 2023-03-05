@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
-import { Colors } from "../helper/colors";
+import { Colors } from "../helpers/colors";
 import { Paper, LinearProgress, linearProgressClasses } from "@mui/material";
 
 export const DashboardContainer = styled(Box)(({ theme }) => ({

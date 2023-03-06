@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import mapboxgl from "mapbox-gl";
-// import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
-import { setLocation } from "../services/weatherSlice";
 import Dashboard from "../pages/dashBoard";
 
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -12,13 +9,11 @@ import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
 const token =
   (mapboxgl.accessToken = `pk.eyJ1IjoiZm9sYXJpbmpyIiwiYSI6ImNsZXZ1emg0ajA4ZGYzc3M4Z3lrMHdpc3cifQ.dTSkzQIwZciQ51DtrCdf3w`);
 
-const Mapbox = ({ location, current }) => {
+const Mapbox = ({ location }) => {
   const lat = location?.lat;
   const lng = location?.lon;
 
   // eslint-disable-next-line
-  const dispatch = useDispatch();
-
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [popUpDisplay, setPopupDisplay] = useState(false);
@@ -52,19 +47,6 @@ const Mapbox = ({ location, current }) => {
     const newMarker = new mapboxgl.Marker(el)
       .setLngLat([lng2, lat2])
       .addTo(map.current);
-
-    // const geocoder = new MapboxGeocoder({
-    //   // Initialize the geocoder
-    //   accessToken: token,
-    //   mapboxgl: mapboxgl,
-    //   marker: false,
-    // });
-    // // add geocoder to map
-    // map.current.addControl(geocoder);
-
-    // geocoder.on("result", (e) => {
-    //   dispatch(setLocation(e.result.text));
-    // });
   });
 
   useEffect(() => {

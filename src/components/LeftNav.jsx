@@ -1,11 +1,10 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import { LeftNavContainer } from "../theme/styled";
 import logo from "../assets/react.svg";
 import { Box } from "@mui/system";
 import { useDispatch, useSelector } from "react-redux";
 import { setLocation } from "../services/weatherSlice";
-import { Input, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import { useCallback, useState, useEffect } from "react";
 
 const data = [

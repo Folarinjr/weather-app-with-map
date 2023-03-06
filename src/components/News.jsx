@@ -56,7 +56,7 @@ const News = ({ news }) => {
         {news?.value.map((news, i) => {
           const dateToFormat = news?.datePublished;
           return (
-            <SwiperSlide key={news[i]}>
+            <SwiperSlide key={i}>
               <Card
                 variant="outlined"
                 key={news[i]}

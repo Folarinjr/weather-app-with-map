@@ -2,9 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseUrl = `https://weatherapi-com.p.rapidapi.com/`;
 
-const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
-
-console.log(apiKey);
+// const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 
 const weatherHeaders = {
   // "X-RapidAPI-Key": apiKey,

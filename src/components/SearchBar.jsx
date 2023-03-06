@@ -4,7 +4,6 @@ import { setLocation } from "../services/weatherSlice";
 import { Box, Autocomplete, TextField, InputAdornment } from "@mui/material";
 import { Search } from "@mui/icons-material";
 import { useGetSearchWeatherQuery } from "../services/weatherApi";
-import { setSaves } from "../services/weatherSlice";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
@@ -13,14 +12,9 @@ const SearchBar = () => {
   const { data } = useGetSearchWeatherQuery(search);
   const dispatch = useDispatch();
 
-  const getSavedItems = JSON.parse(localStorage.getItem("savedItems"));
-
   useEffect(() => {
     if (data) {
       setAutoCompleteList(data);
-    }
-    if (getSavedItems) {
-      dispatch(setSaves(getSavedItems));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
 import mapboxgl from "mapbox-gl";
 import Dashboard from "../pages/dashBoard";
 

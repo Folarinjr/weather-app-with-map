@@ -19,16 +19,21 @@ export const DashboardContainer = styled(Box)(({ theme }) => ({
 }));
 export const LeftNavContainer = styled(Box)(({ theme }) => ({
   backgroundColor: Colors.secondaryBackground,
-  width: "20%",
+  width: "30%",
   height: "100vh",
   color: Colors.blue,
   [theme.breakpoints.down("sm")]: {
-    display: "none",
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
+    gap: "2rem",
+    justifyContent: "center",
+    alignItems: "center",
   },
 }));
 export const MiddleContainer = styled(Box)(({ theme }) => ({
   backgroundColor: Colors.background,
-  width: "50%",
+  width: "70%",
   overflow: "scroll",
   overflowX: "hidden",
   [theme.breakpoints.down("sm")]: {

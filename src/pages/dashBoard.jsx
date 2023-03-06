@@ -4,11 +4,11 @@ import { setLocation } from "../services/weatherSlice";
 import { Box, Typography, Stack, Divider } from "@mui/material";
 import { useGetForecastWeatherQuery } from "../services/weatherApi";
 import Moment from "react-moment";
-import useGeoLocation from "../hooks/useGeoLocation";
+import useGeoLocation from "../hooks/useGeolocation";
 import WeatherChart from "../components/Chart";
-import TodaysOverview from "../components/TodaysOverview";
-import SearchBar from "../components/Searchbar";
-import ThreeDayForecast from "../components/ThreeDayForecast";
+import TodaysOverview from "../components/TodayOverview";
+import SearchBar from "../components/SearchBar";
+import ThreeDayForecast from "../components/ThreeDayForcast";
 import Loader from "../components/Loader";
 
 const Dashboard = () => {
@@ -52,14 +52,14 @@ const Dashboard = () => {
         sx={{ paddingBottom: 2 }}
       >
         <Stack>
-          <Typography variant="h5"> {location?.name} </Typography>
-          <Typography variant="subtitle2"> {location?.region} </Typography>
+          <Typography variant="h5">{location?.name}</Typography>
+          <Typography variant="subtitle2">{location?.region}</Typography>
           <Typography variant="subtitle2">
             {" "}
             <Moment format="LL" date={dateToFormat} />{" "}
           </Typography>
         </Stack>
-        <SearchBar location={location} />
+        <SearchBar />
       </Stack>
       <Divider light />
       <TodaysOverview current={current} forecast={forecast} />

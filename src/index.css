@@ -42,3 +42,16 @@ body {
 .loader {
   width: 5rem;
 }
+.marker {
+  background-image: url("/src/assets/info.svg");
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.active {
+  color: white;
+  background-color: blue;
+  border-radius: 12px;
+}

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Mapbox from "../components/Mapbox";
+import MapBox from "../components/MapBox";
 import News from "../components/News";
 import { Box, Stack } from "@mui/material";
-import useGeoLocation from "../hooks/useGeoLocation";
+import useGeoLocation from "../hooks/useGeolocation";
 import { setLocation } from "../services/weatherSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useGetForecastWeatherQuery } from "../services/weatherApi";
@@ -46,7 +46,7 @@ const Map = () => {
   return (
     <Box>
       <Stack spacing={2}>
-        <Mapbox location={location} current={current} />
+        <MapBox location={location} current={current} />
         <News news={news} />
       </Stack>
     </Box>
